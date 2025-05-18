@@ -1,0 +1,16 @@
+.nav {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 3vw;
+}
+
+.nav a {
+  font-family: sans-serif;
+  text-decoration: none;
+  color: inherit;
+}
+.nav a:hover {
+  text-decoration: underline;
+}
