@@ -35,3 +35,13 @@
 .container svg {
   flex-shrink: 0;
 }
+.container span {
+  font-size: 18px;
+}
+
+@media (max-width: 576px) {
+  .container input,
+  .container button {
+    width: 100%;
+  }
+}

@@ -14,3 +14,11 @@
 .nav a:hover {
   text-decoration: underline;
 }
+
+@media (max-width: 576px) {
+  .nav {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    justify-items: center;
+  }
+}

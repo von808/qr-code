@@ -15,6 +15,15 @@ const QrCodeGenerator = () => {
     setResult(value);
     setValue('');
   };
+  const handleKeyPress = (event) => {
+    if (event.key === 'Enter') {
+      const prevData = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
+      localStorage.setItem(GENERATE_DATA, JSON.stringify([...prevData, value]));
+
+      setResult(value);
+      setValue('');
+    }
+  };
 
   const onChangeHandler = (event) => {
     setValue(event.target.value);
@@ -23,11 +32,12 @@ const QrCodeGenerator = () => {
 
   return (
     <div className={styles.container}>
-      <input placeholder='Write text...' type='text' value={value} onChange={onChangeHandler} />
+      <input placeholder='Write text...' type='text' value={value} onChange={onChangeHandler} onKeyDown={handleKeyPress} />
       <button type='button' onClick={onClickHandler}>
         generate
       </button>
       {result !== '' && <QRCodeSVG value={result} size={200} />}
+      {result !== '' && <span>{result}</span>}
     </div>
   );
 };

@@ -4,9 +4,10 @@ import s from './GenerateHistory.module.css';
 
 const GenerateHistory = () => {
   const data = JSON.parse(localStorage.getItem(GENERATE_DATA) || '[]');
+  
   return (
     <div className={s.container}>
-      {data.map((text, index) => (
+      {data.reverse().map((text, index) => (
         <div key={index}>
           <QRCodeSVG value={text} size={100} />
           <p>{text}</p>
