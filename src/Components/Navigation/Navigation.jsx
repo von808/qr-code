@@ -5,10 +5,10 @@ import styles from './Navigation.module.css'
 const Navigation = () => {
   return (
     <nav className={styles.nav}>
-      <Link to='/generate'>generate</Link>
-      <Link to='/scan'>scanning</Link>
-      <Link to='/generateHistory'>history generate</Link>
-      <Link to='/scanHistory'>history scanning</Link>
+      <Link to='/qr-code/generate'>generate</Link>
+      <Link to='/qr-code/scan'>scanning</Link>
+      <Link to='/qr-code/generateHistory'>history generate</Link>
+      <Link to='/qr-code/scanHistory'>history scanning</Link>
     </nav>
   );
 };
